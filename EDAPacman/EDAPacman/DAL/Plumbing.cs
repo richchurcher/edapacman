@@ -1,4 +1,4 @@
-﻿namespace EDAPacman
+﻿namespace EDAPacman.DAL
 {
     public class Plumbing
     {

@@ -7,14 +7,14 @@ namespace EDAPacman
 {
     class Controller
     {
-        public Board _MainBoard { get; set; }
+        public Maze _MainBoard { get; set; }
         public BoardView _view { get; set; }
         //public Player player { get; set; }
         public Keys _Keys { get; set; }
 
         public Roguelike_Controller()
         {
-            _MainBoard = new Board();
+            _MainBoard = new Maze();
             //player = new Player(0, 0);
             _view = new BoardView();
             _view.ClearBoard();
