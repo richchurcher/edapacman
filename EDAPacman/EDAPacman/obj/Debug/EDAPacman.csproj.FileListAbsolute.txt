@@ -1,1 +1,0 @@
-C:\dev\eda\design-drill-classical-inheritance-challenge\EDAPacman\EDAPacman\bin\Debug\EDAPacman.exe.config
