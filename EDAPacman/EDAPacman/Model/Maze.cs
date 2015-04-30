@@ -3,52 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EDAPacman
+namespace EDAPacman.Model
 {
-    public class Board
+    public class Maze
     {
-        private List<List<string>> _board;
+        private List<List<string>> maze;
         private Player _player;
-        private List<Trap> _traps;
+       
 
-        public Board()
+        public Maze()
         {
             _player = new Player(0, 0);
-            CreateTraps();
+       
             Refresh();
         }
 
         private void Wipe()
         {
-            _board = new List<List<string>>(9)
-            {
-                new List<string>(9) { " ", " ", " ", " ", " ", " ", " ", " ", " "},
-                new List<string>(9) { " ", " ", " ", " ", " ", " ", " ", " ", " "},
-                new List<string>(9) { " ", " ", " ", " ", " ", " ", " ", " ", " "},
-                new List<string>(9) { " ", " ", " ", " ", " ", " ", " ", " ", " "},
-                new List<string>(9) { " ", " ", " ", " ", " ", " ", " ", " ", " "},
-                new List<string>(9) { " ", " ", " ", " ", " ", " ", " ", " ", " "},
-                new List<string>(9) { " ", " ", " ", " ", " ", " ", " ", " ", " "},
-                new List<string>(9) { " ", " ", " ", " ", " ", " ", " ", " ", " "},
-                new List<string>(9) { " ", " ", " ", " ", " ", " ", " ", " ", " "},
-            };
+            maze = new List<List<string>>(20);
+            //{
+                
+                //new List<string>(20) (),
+                //new List<string>(20) (),
+                //new List<string>(20) (),
+                //new List<string>(20) (),
+                //new List<string>(20) (),
+                //new List<string>(20) (),
+                //new List<string>(20) (),
+                //new List<string>(20) (),
+                //new List<string>(20) (),
+                                    
+            // };
         }
 
-        private void CreateTraps()
-        {
-            _traps = new List<Trap>
-            {
-                new Trap(5,5),
-                new Trap(4,7),
-                new Trap(2,3),
-                new Trap(6,2),
-                new Trap(1,7),
-            };
-        }
+    
 
         public bool CheckForTrap()
         {
-            return _board[_player.Row][_player.Col] == ">";
+            return maze[_player.Row][_player.Col] == ">";
         }
 
         public List<List<string>> MovePlayer(ConsoleKey key)
@@ -72,15 +64,15 @@ namespace EDAPacman
                     break;
             }
 
-            if (row >= 0 && row < _board.Count)
+            if (row >= 0 && row < maze.Count)
                 _player.Row = row;
-            if (col >= 0 && col < _board[0].Count)
+            if (col >= 0 && col < maze[0].Count)
                 _player.Col = col;
 
             if (CheckForTrap())
                 ResetPlayer();
             Refresh();
-            return _board;
+            return maze;
 
 
         }
@@ -94,10 +86,10 @@ namespace EDAPacman
         private void Refresh()
         {
             Wipe();
-            _board[_player.Row][_player.Col] = _player.ToString();
+            maze[_player.Row][_player.Col] = _player.ToString();
             foreach (Trap t in _traps)
             {
-                _board[t.Row][t.Col] = t.ToString();
+                maze[t.Row][t.Col] = t.ToString();
             }
         }
 
@@ -109,13 +101,13 @@ namespace EDAPacman
         }
         public List<List<string>> Get()
         {
-            return _board;
+            return maze;
         }
 
         public override string ToString()
         {
             string s = "";
-            foreach (List<string> row in _board)
+            foreach (List<string> row in maze)
             {
                 foreach (string square in row)
                 {

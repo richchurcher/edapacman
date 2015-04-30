@@ -49,10 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Board.cs" />
+    <Compile Include="Model\Maze.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Keys.cs" />
-    <Compile Include="Plumbing.cs" />
+    <Compile Include="Model\Player.cs" />
+    <Compile Include="DAL\Plumbing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
