@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EDAPacman.DAL;
 
 namespace EDAPacman
 {
@@ -14,21 +15,26 @@ namespace EDAPacman
             switch (command)
             {
                 case "save":
-                    controller = new AddController();
+                 SaveController addController = new SaveController();
                     break;
                 // TODO Implement the list controller and list view so they retrieve from the database and show the list of todos in the console
-                case "showboards":
-                    controller = new ListController();
+                case "list":
+                ListController listcontroller = new ListController();
                     break;
                 case "fetch":
-                    controller = new DeleteContoller();
+                  FetchController fetchcontroller = new FetchController();
                     break;
                 case "deleteboard":
-                    controller = new DeleteContoller();
+                    DeleteController delete = new DeleteController();
                     break;
+                default:
+                    Controller controller = new Controller();
+                    break;
+                    
 
 
             }
         }
     }
+}
 

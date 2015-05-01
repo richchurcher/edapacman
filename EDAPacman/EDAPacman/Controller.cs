@@ -36,6 +36,7 @@ namespace EDAPacman
             }
             else if (inputCharacter == ConsoleKey.S || inputCharacter == ConsoleKey.F || inputCharacter == ConsoleKey.Q || inputCharacter == ConsoleKey.L)
 
+
         }
         public void Game()
         {
