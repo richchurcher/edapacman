@@ -11,12 +11,13 @@ namespace EDAPacman
     {
         static void Main(string[] args)
         {
-            ///*
-            //Router router = new Router();
-            //router.Route(args);
-            ///*/
-            //Controller controller = new Controller();
-            //controller.Game();
+            
+            Router router = new Router();
+            router.Route(args);
+            
+
+
+           
             
         }
     }

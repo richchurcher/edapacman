@@ -7,7 +7,7 @@ using EDAPacman.Model;
 
 namespace EDAPacman
 {
-    class Controller
+    class Controller : IController
     {
         public Maze _MainBoard { get; set; }
         public MazeView _view { get; set; }
@@ -48,5 +48,10 @@ namespace EDAPacman
             Console.ReadLine();
         }
 
+
+        public void Process(string command, string[] args)
+        {
+            Game();
+        }
     }
 }

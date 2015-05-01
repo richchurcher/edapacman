@@ -5,7 +5,11 @@ using System.Threading.Tasks;
 
 namespace EDAPacman
 {
-    public class DeleteController
+    public class DeleteController : IController
     {
+        public void Process(string command, string[] args)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

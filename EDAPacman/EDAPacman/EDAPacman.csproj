@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IController.cs" />
     <Compile Include="MazeView.cs" />
     <Compile Include="Migrations\201505010112473_initial.cs" />
     <Compile Include="Migrations\201505010112473_initial.Designer.cs">
