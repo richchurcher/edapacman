@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoardView.cs" />
-    <Compile Include="DAL\SaveController.cs" />
+    <Compile Include="SaveController.cs" />
     <Compile Include="DeleteController.cs" />
     <Compile Include="FetchController.cs" />
     <Compile Include="ListController.cs" />

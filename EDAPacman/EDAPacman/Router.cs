@@ -15,25 +15,36 @@ namespace EDAPacman
             switch (command)
             {
                 case "save":
-                 SaveController addController = new SaveController();
+                    SaveController controller = new SaveController();
                     break;
                 // TODO Implement the list controller and list view so they retrieve from the database and show the list of todos in the console
                 case "list":
-                ListController listcontroller = new ListController();
+                    ListController controller = new ListController();
                     break;
                 case "fetch":
-                  FetchController fetchcontroller = new FetchController();
+                    FetchController controller = new FetchController();
                     break;
                 case "deleteboard":
-                    DeleteController delete = new DeleteController();
+                    DeleteController controller = new DeleteController();
                     break;
                 default:
                     Controller controller = new Controller();
                     break;
-                    
-
-
             }
+            try
+            {
+                Controller.Process(command, args.Skip(1));
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+
+
+
+
+        }
         }
     }
 }
