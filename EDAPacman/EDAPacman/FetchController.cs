@@ -12,10 +12,16 @@ namespace EDAPacman
         {
             //Create Add model
             Maze model = new Maze();
-            var fetchgames = model.FetchMaze(id);
+            var fetchgame = model.Load(id);
             
             MazeView _viewBoard = new MazeView();
-            _viewBoard.DisplayGameList(fetchgames);
+              _viewBoard.ClearMaze();
+            _viewBoard.CreateMaze(fetchgame);
+
+            Controller controller = new Controller();
+            controller.Game();
+        
+        }
 
     }
 }

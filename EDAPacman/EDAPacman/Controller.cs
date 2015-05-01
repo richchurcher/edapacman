@@ -26,17 +26,10 @@ namespace EDAPacman
         }
         public void MoveCharacter()
         {
-            ConsoleKey inputCharacter = _Keys.ReadingKeys();
-            if (inputCharacter == ConsoleKey.UpArrow || inputCharacter == ConsoleKey.DownArrow || inputCharacter == ConsoleKey.LeftArrow ||
-               inputCharacter == ConsoleKey.RightArrow)
-            {
-                List<List<String>> updatedBoard = _MainBoard.MovePlayer(inputCharacter);
-                _view.ClearMaze();
-                _view.CreateMaze(updatedBoard);
-            }
-            else if (inputCharacter == ConsoleKey.S || inputCharacter == ConsoleKey.F || inputCharacter == ConsoleKey.Q || inputCharacter == ConsoleKey.L)
-
-
+            ConsoleKey direction = _Keys.ReadingKeys();
+            List<List<String>> updatedBoard = _MainBoard.MovePlayer(direction);
+            _view.ClearMaze();
+            _view.CreateMaze(updatedBoard);
         }
         public void Game()
         {
