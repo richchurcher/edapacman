@@ -21,10 +21,7 @@ namespace EDAPacman.DAL
             model.Persist();
             AddView view = new AddView();
             view.Render(model);
-            //Tell Add Model to persist to db
-            //Prep message
-            //(Create a persist and prep message method on the Add model)
-            //Render view
+           
 
         }
     }
