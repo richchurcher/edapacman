@@ -50,6 +50,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MazeView.cs" />
+    <Compile Include="Migrations\201505010112473_initial.cs" />
+    <Compile Include="Migrations\201505010112473_initial.Designer.cs">
+      <DependentUpon>201505010112473_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505010129254_public_layout_and_player.cs" />
+    <Compile Include="Migrations\201505010129254_public_layout_and_player.Designer.cs">
+      <DependentUpon>201505010129254_public_layout_and_player.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Plumbing\GameContext.cs" />
     <Compile Include="SaveController.cs" />
     <Compile Include="DeleteController.cs" />
@@ -67,7 +76,14 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201505010112473_initial.resx">
+      <DependentUpon>201505010112473_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505010129254_public_layout_and_player.resx">
+      <DependentUpon>201505010129254_public_layout_and_player.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
