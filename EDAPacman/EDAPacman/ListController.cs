@@ -21,6 +21,7 @@ namespace EDAPacman
             Controller controller = new Controller();
             controller.Game();
 
+    
         }
     }
 }

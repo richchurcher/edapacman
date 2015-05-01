@@ -39,11 +39,9 @@ namespace EDAPacman
                 MoveCharacter();
             }
             
-            var start = DateTime.UtcNow;
-            while ((DateTime.UtcNow - start) < TimeSpan.FromSeconds(5))
-            {
-                Console.WriteLine("YOU WON THE GAME YEEEEAAAAAAAAAA!");
-            }
+            
+            Console.WriteLine("YOU WON THE GAME");
+            
             Console.WriteLine("Press any key to exit");
             Console.ReadLine();
         }

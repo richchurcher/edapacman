@@ -14,38 +14,33 @@ namespace EDAPacman
     {
         public void Route(string[] args)
         {
+
+            IController controller;
             var command = args.Length != 0 ? args[0].ToLowerInvariant() : String.Empty;
             switch (command)
             {
                 case "save":
-                    SaveController controller = new SaveController();
+                    controller = new SaveController();
                     break;
                 case "list":
-                    ListController controller = new ListController();
+                    controller = new ListController();
                     break;
                 case "fetch":
-                    FetchController controller = new FetchController();
+                    controller = new FetchController();
                     break;
                 case "deleteboard":
-                    DeleteController controller = new DeleteController();
+                    controller = new DeleteController();
                     break;
                 default:
-                    Controller controller = new Controller();
+                    controller = new Controller();
                     break;
             }
-            try
-            {
-                controller.Process(command, args.Skip(1));
 
-            }
-            catch (Exception)
-            {
+            controller.Process(command, args.Skip(1).ToArray());
 
-                throw;
-            }
 
-        }
         }
     }
 }
+
 
