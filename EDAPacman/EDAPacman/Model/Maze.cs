@@ -10,6 +10,7 @@ namespace EDAPacman.Model
     public class Maze
     {
         public int Id { get; set; }
+        public string Name { get; set; }
         public string Layout { get; set; }
         public Player Player { get; set; }
         private List<List<string>> _maze; 
@@ -84,39 +85,40 @@ namespace EDAPacman.Model
         //    return _maze[_player.Row][_player.Col] == ">";
         //}
 
-        //public List<List<string>> MovePlayer(ConsoleKey key)
-        //{
-        //    int row = _player.Row;
-        //    int col = _player.Col;
+        public List<List<string>> MovePlayer(ConsoleKey key)
+        {
+            int row = Player.Row;
+            int col = Player.Col;
 
-        //    switch (key)
-        //    {
-        //        case ConsoleKey.UpArrow:
-        //            row--;
-        //            break;
-        //        case ConsoleKey.DownArrow:
-        //            row++;
-        //            break;
-        //        case ConsoleKey.LeftArrow:
-        //            col--;
-        //            break;
-        //        case ConsoleKey.RightArrow:
-        //            col++;
-        //            break;
-        //    }
+            switch (key)
+            {
+                case ConsoleKey.UpArrow:
+                    row--;
+                    break;
+                case ConsoleKey.DownArrow:
+                    row++;
+                    break;
+                case ConsoleKey.LeftArrow:
+                    col--;
+                    break;
+                case ConsoleKey.RightArrow:
+                    col++;
+                    break;
+            }
 
-        //    if (row >= 0 && row < _maze.Count)
-        //        _player.Row = row;
-        //    if (col >= 0 && col < _maze[0].Count)
-        //        _player.Col = col;
-
-        //    if (CheckForTrap())
-        //        ResetPlayer();
-        //    Refresh();
-        //    return _maze;
-
-
-        //}
+            if (row >= 0 && row < _maze.Count && col >= 0 && col < _maze[0].Count)
+            {
+                if (_maze[row][col] != "=")
+                {
+                    _maze[Player.Row][Player.Col] = " ";
+                    Player.Row = row;
+                    Player.Col = col;
+                    _maze[row][col] = "<";
+                }
+            }
+       
+            return _maze;
+        }
 
         //public void ResetPlayer()
         //{
