@@ -38,6 +38,10 @@ namespace EDAPacman
                 {
                     // some logic in here to interact with database.
                 }
+                if (key == ConsoleKey.F)
+                {
+                    // some logic in here to interact with database.
+                }
                 else
                 {
                     Console.WriteLine(" Please use the arrow keys");
@@ -45,7 +49,6 @@ namespace EDAPacman
                     ReadingKeys();
                 }
             }
-
             return key;
         }
     }
