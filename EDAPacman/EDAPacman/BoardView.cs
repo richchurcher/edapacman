@@ -32,6 +32,11 @@ namespace EDAPacman
         {
             Console.Clear();
         }
-            }
+
+        public void DisplaySaveGame()
+        {
+            Console.WriteLine("You have saved the game; ");
+        }
+}
         }
     

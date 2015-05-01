@@ -33,7 +33,7 @@ namespace EDAPacman
             }
             try
             {
-                Controller.Process(command, args.Skip(1));
+                controller.Process(command, args.Skip(1));
             }
             catch (Exception)
             {
