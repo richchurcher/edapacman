@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoardView.cs" />
+    <Compile Include="MazeView.cs" />
     <Compile Include="Plumbing\GameContext.cs" />
     <Compile Include="SaveController.cs" />
     <Compile Include="DeleteController.cs" />

@@ -37,6 +37,11 @@ namespace EDAPacman
         {
             Console.WriteLine("You have saved the game; ");
         }
-}
+
+        public void ListAllGames(List<List<string>> games)
+        {
+            Console.WriteLine(games.ToString());
         }
+        }
+      }
     
