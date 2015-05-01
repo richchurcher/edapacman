@@ -34,6 +34,10 @@ namespace EDAPacman
                 {
                     keepReading = false;
                 }
+                if (key == ConsoleKey.S)
+                {
+                    // some logic in here to interact with database.
+                }
                 else
                 {
                     Console.WriteLine(" Please use the arrow keys");
