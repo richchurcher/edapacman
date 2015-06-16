@@ -121,7 +121,7 @@ namespace EDAPacman.Model
 
         }
 
-        public Maze Load(int id)
+        public List<List<string>> Load(int id)
         {
             GameContext context = new GameContext();
             Layout = context.Mazes.Where(m => m.Id == id).First().Layout;
@@ -132,7 +132,7 @@ namespace EDAPacman.Model
                 _maze[i] = new List<string>(Layout.Substring(j, 20).Split());
                 j += 20;
             }
-            return new Maze();
+            return _maze;
         }
 
         //public void ResetPlayer()
